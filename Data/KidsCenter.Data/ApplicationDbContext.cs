@@ -80,12 +80,30 @@
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            ManyToManyRelations(builder);
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)
             where T : class, IDeletableEntity
         {
             builder.Entity<T>().HasQueryFilter(e => !e.IsDeleted);
+        }
+
+        private static void ManyToManyRelations(ModelBuilder builder)
+        {
+            builder.Entity<EventCategory>()
+            .HasKey(t => new { t.EventId, t.CategoryId });
+
+            builder.Entity<EventCategory>()
+                .HasOne(pt => pt.Event)
+                .WithMany(p => p.Categories)
+                .HasForeignKey(pt => pt.EventId);
+
+            builder.Entity<EventCategory>()
+                .HasOne(pt => pt.Category)
+                .WithMany(t => t.Events)
+                .HasForeignKey(pt => pt.CategoryId);
         }
 
         // Applies configurations
@@ -113,5 +131,6 @@
                 }
             }
         }
+
     }
 }

@@ -33,6 +33,6 @@
 
         public DateTime? DeletedOn { get; set; }
 
-        public virtual ICollection<Category> Categories { get; set; } = new HashSet<Category>();
+        public virtual ICollection<EventCategory> Categories { get; set; } = new HashSet<EventCategory>();
     }
 }
