@@ -1,5 +1,4 @@
-﻿// ReSharper disable VirtualMemberCallInConstructor
-namespace KidsCenter.Data.Models
+﻿namespace KidsCenter.Data.Models
 {
     using System;
 

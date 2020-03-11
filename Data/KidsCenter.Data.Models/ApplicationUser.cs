@@ -1,5 +1,4 @@
-﻿// ReSharper disable VirtualMemberCallInConstructor
-namespace KidsCenter.Data.Models
+﻿namespace KidsCenter.Data.Models
 {
     using System;
     using System.Collections.Generic;
@@ -33,5 +32,7 @@ namespace KidsCenter.Data.Models
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
+
+        public ICollection<Event> Events { get; set; } = new HashSet<Event>();
     }
 }
