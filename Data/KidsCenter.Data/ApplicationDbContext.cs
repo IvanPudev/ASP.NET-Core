@@ -8,7 +8,6 @@
 
     using KidsCenter.Data.Common.Models;
     using KidsCenter.Data.Models;
-
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
@@ -131,6 +130,5 @@
                 }
             }
         }
-
     }
 }

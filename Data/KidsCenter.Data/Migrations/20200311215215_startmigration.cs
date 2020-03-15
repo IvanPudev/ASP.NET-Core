@@ -1,9 +1,10 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace KidsCenter.Data.Migrations
+﻿namespace KidsCenter.Data.Migrations
 {
-    public partial class startmigration : Migration
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
+    public partial class Startmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +14,7 @@ namespace KidsCenter.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -27,7 +28,7 @@ namespace KidsCenter.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
-                    IsoCode = table.Column<string>(nullable: true)
+                    IsoCode = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -45,7 +46,7 @@ namespace KidsCenter.Data.Migrations
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true)
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -73,7 +74,7 @@ namespace KidsCenter.Data.Migrations
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true)
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -97,7 +98,7 @@ namespace KidsCenter.Data.Migrations
                 columns: table => new
                 {
                     EventId = table.Column<int>(nullable: false),
-                    CategoryId = table.Column<int>(nullable: false)
+                    CategoryId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {

@@ -6,7 +6,6 @@
 
     using KidsCenter.Common;
     using KidsCenter.Data.Models;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
 

@@ -179,6 +179,12 @@ namespace KidsCenter.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<short?>("AdultsCount")
+                        .HasColumnType("smallint");
+
+                    b.Property<short>("ChildrenCount")
+                        .HasColumnType("smallint");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -197,9 +203,6 @@ namespace KidsCenter.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("OwnerId")
                         .HasColumnType("nvarchar(450)");
 
@@ -208,6 +211,9 @@ namespace KidsCenter.Data.Migrations
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

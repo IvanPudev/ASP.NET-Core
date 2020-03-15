@@ -36,6 +36,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\KidsCenter.Data.Models\KidsCenter.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\KidsCenter.Data\KidsCenter.Data.csproj" />
+    <ProjectReference Include="..\..\KidsCenter.Common\KidsCenter.Common.csproj" />
     <ProjectReference Include="..\..\Services\KidsCenter.Services.Data\KidsCenter.Services.Data.csproj" />
     <ProjectReference Include="..\..\Services\KidsCenter.Services.Mapping\KidsCenter.Services.Mapping.csproj" />
     <ProjectReference Include="..\..\Services\KidsCenter.Services.Messaging\KidsCenter.Services.Messaging.csproj" />
