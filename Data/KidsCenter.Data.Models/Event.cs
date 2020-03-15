@@ -38,5 +38,7 @@
         public DateTime? DeletedOn { get; set; }
 
         public virtual ICollection<EventCategory> Categories { get; set; } = new HashSet<EventCategory>();
+
+        public virtual ICollection<EventAddOn> AddOns { get; set; } = new HashSet<EventAddOn>();
     }
 }

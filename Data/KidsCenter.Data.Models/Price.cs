@@ -24,5 +24,7 @@
         public DateTime? DeletedOn { get; set; }
 
         public virtual ICollection<Event> Events { get; set; } = new HashSet<Event>();
+
+        public virtual ICollection<AddOn> AddOns { get; set; } = new HashSet<AddOn>();
     }
 }

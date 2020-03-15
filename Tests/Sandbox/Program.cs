@@ -5,6 +5,7 @@
     using System.IO;
     using System.Threading.Tasks;
 
+    using CommandLine;
     using KidsCenter.Data;
     using KidsCenter.Data.Common;
     using KidsCenter.Data.Common.Repositories;
@@ -13,9 +14,6 @@
     using KidsCenter.Data.Seeding;
     using KidsCenter.Services.Data;
     using KidsCenter.Services.Messaging;
-
-    using CommandLine;
-
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;

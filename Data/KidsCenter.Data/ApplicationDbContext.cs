@@ -29,6 +29,8 @@
 
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<AddOn> AddOns { get; set; }
+
         public DbSet<Price> Prices { get; set; }
 
         public DbSet<Currency> Currencies { get; set; }
@@ -103,6 +105,19 @@
                 .HasOne(pt => pt.Category)
                 .WithMany(t => t.Events)
                 .HasForeignKey(pt => pt.CategoryId);
+
+            builder.Entity<EventAddOn>()
+            .HasKey(t => new { t.EventId, t.AddOnId });
+
+            builder.Entity<EventAddOn>()
+                .HasOne(pt => pt.Event)
+                .WithMany(p => p.AddOns)
+                .HasForeignKey(pt => pt.EventId);
+
+            builder.Entity<EventAddOn>()
+                .HasOne(pt => pt.AddOn)
+                .WithMany(t => t.Events)
+                .HasForeignKey(pt => pt.AddOnId);
         }
 
         // Applies configurations
