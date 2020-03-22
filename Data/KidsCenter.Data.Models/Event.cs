@@ -25,9 +25,9 @@
 
         public Price Price { get; set; }
 
-        public string OwnerId { get; set; }
+        public string CustomerId { get; set; }
 
-        public ApplicationUser Owner { get; set; }
+        public ApplicationUser Customer { get; set; }
 
         public DateTime CreatedOn { get; set; }
 
