@@ -20,5 +20,7 @@
         public Price Price { get; set; }
 
         public virtual ICollection<EventAddOn> Events { get; set; } = new HashSet<EventAddOn>();
+
+        public virtual ICollection<PackageAddOn> Packages { get; set; } = new HashSet<PackageAddOn>();
     }
 }

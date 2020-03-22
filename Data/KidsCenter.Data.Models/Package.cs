@@ -25,6 +25,6 @@
 
         public ApplicationUser Customer { get; set; }
 
-        public virtual ICollection<AddOn> AddOns { get; set; } = new HashSet<AddOn>();
+        public virtual ICollection<PackageAddOn> AddOns { get; set; } = new HashSet<PackageAddOn>();
     }
 }

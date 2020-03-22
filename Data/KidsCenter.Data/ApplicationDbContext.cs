@@ -35,6 +35,8 @@
 
         public DbSet<Currency> Currencies { get; set; }
 
+        public DbSet<Package> Packages { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
@@ -117,6 +119,19 @@
             builder.Entity<EventAddOn>()
                 .HasOne(pt => pt.AddOn)
                 .WithMany(t => t.Events)
+                .HasForeignKey(pt => pt.AddOnId);
+
+            builder.Entity<PackageAddOn>()
+            .HasKey(t => new { t.PackageId, t.AddOnId });
+
+            builder.Entity<PackageAddOn>()
+                .HasOne(pt => pt.Package)
+                .WithMany(p => p.AddOns)
+                .HasForeignKey(pt => pt.PackageId);
+
+            builder.Entity<PackageAddOn>()
+                .HasOne(pt => pt.AddOn)
+                .WithMany(t => t.Packages)
                 .HasForeignKey(pt => pt.AddOnId);
         }
 

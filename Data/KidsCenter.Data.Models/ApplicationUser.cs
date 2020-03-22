@@ -33,6 +33,8 @@
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
 
-        public ICollection<Event> Events { get; set; } = new HashSet<Event>();
+        public virtual ICollection<Event> Events { get; set; } = new HashSet<Event>();
+
+        public virtual ICollection<Package> Packages { get; set; } = new HashSet<Package>();
     }
 }
