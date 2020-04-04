@@ -12,19 +12,19 @@
 
     public class EventsController : BaseController
     {
-        private readonly IEventService settingsService;
+        private readonly IEventService eventsService;
 
         private readonly IDeletableEntityRepository<Event> repository;
 
-        public EventsController(IEventService settingsService, IDeletableEntityRepository<Event> repository)
+        public EventsController(IEventService eventsService, IDeletableEntityRepository<Event> repository)
         {
-            this.settingsService = settingsService;
+            this.eventsService = eventsService;
             this.repository = repository;
         }
 
         public IActionResult Index()
         {
-            var events = this.settingsService.GetAll<EventViewModel>();
+            var events = this.eventsService.GetAll<EventViewModel>();
             var model = new EventsListViewModel { Events = events };
             return this.View(model);
         }

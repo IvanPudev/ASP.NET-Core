@@ -79,7 +79,7 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<IEventService, SettingsService>();
+            services.AddTransient<IEventService, EventsService>();
         }
     }
 }

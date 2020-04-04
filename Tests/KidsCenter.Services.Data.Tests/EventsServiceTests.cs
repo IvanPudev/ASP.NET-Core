@@ -15,19 +15,19 @@
 
     using Xunit;
 
-    public class SettingsServiceTests
+    public class EventsServiceTests
     {
         [Fact]
         public void GetCountShouldReturnCorrectNumber()
         {
-            var repository = new Mock<IDeletableEntityRepository<Setting>>();
-            repository.Setup(r => r.All()).Returns(new List<Setting>
+            var repository = new Mock<IDeletableEntityRepository<Event>>();
+            repository.Setup(r => r.All()).Returns(new List<Event>
                                                         {
-                                                            new Setting(),
-                                                            new Setting(),
-                                                            new Setting(),
+                                                            new Event(),
+                                                            new Event(),
+                                                            new Event(),
                                                         }.AsQueryable());
-            var service = new SettingsService(repository.Object);
+            var service = new EventsService(repository.Object);
             Assert.Equal(3, service.GetCount());
             repository.Verify(x => x.All(), Times.Once);
         }
@@ -36,15 +36,15 @@
         public async Task GetCountShouldReturnCorrectNumberUsingDbContext()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: "SettingsTestDb").Options;
+                .UseInMemoryDatabase(databaseName: "EventsTestDb").Options;
             var dbContext = new ApplicationDbContext(options);
-            dbContext.Settings.Add(new Setting());
-            dbContext.Settings.Add(new Setting());
-            dbContext.Settings.Add(new Setting());
+            dbContext.Events.Add(new Event());
+            dbContext.Events.Add(new Event());
+            dbContext.Events.Add(new Event());
             await dbContext.SaveChangesAsync();
 
-            var repository = new EfDeletableEntityRepository<Setting>(dbContext);
-            var service = new SettingsService(repository);
+            var repository = new EfDeletableEntityRepository<Event>(dbContext);
+            var service = new EventsService(repository);
             Assert.Equal(3, service.GetCount());
         }
     }
