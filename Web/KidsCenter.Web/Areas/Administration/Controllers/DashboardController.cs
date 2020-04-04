@@ -7,9 +7,9 @@
 
     public class DashboardController : AdministrationController
     {
-        private readonly ISettingsService settingsService;
+        private readonly IEventService settingsService;
 
-        public DashboardController(ISettingsService settingsService)
+        public DashboardController(IEventService settingsService)
         {
             this.settingsService = settingsService;
         }

@@ -7,7 +7,7 @@
     using KidsCenter.Data.Models;
     using KidsCenter.Services.Mapping;
 
-    public class SettingsService : ISettingsService
+    public class SettingsService : IEventService
     {
         private readonly IDeletableEntityRepository<Setting> settingsRepository;
 

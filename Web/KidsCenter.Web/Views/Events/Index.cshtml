@@ -1,0 +1,16 @@
+﻿@model KidsCenter.Web.ViewModels.Events.EventsListViewModel
+
+@{
+    this.ViewData["Title"] = "Събития";
+}
+
+<h1>@this.ViewData["Title"]</h1>
+
+@foreach (var item in this.Model.Events)
+{
+    <h2>@item.Title</h2>
+
+    <div>@item.Title: @item.StartAndEnd</div>
+}
+
+<a asp-action="CreateEvent" class="btn btn-primary">Добави ново събитие</a>

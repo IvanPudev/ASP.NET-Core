@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public interface ISettingsService
+    public interface IEventService
     {
         int GetCount();
 
